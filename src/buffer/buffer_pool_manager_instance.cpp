@@ -38,9 +38,7 @@ BufferPoolManagerInstance::~BufferPoolManagerInstance() {
 }
 
 // 分配一个新的 page_id，每次调用自增
-auto BufferPoolManagerInstance::AllocatePage() -> page_id_t {
-  return next_page_id_++;
-}
+auto BufferPoolManagerInstance::AllocatePage() -> page_id_t { return next_page_id_++; }
 
 // 创建一个新页面：取一个可用帧，分配新的 page_id，并把它挂到 page table 上
 auto BufferPoolManagerInstance::NewPgImp(page_id_t *page_id) -> Page * {
